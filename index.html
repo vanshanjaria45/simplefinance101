@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FinanceEase: The ultimate all-in-one financial calculator hub for budgeting, loans, savings, interest, and planning.">
-  <title>FinanceEase | All-in-One Online Financial Calculators</title>
+  <meta name="description" content="SmartCalcSuite: Free online financial calculators for loans, mortgages, savings, EMI, budgeting, and more. Designed to help you make smarter financial decisions.">
+  <title>SmartCalcSuite | All-in-One Financial Calculator Website</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -61,7 +61,7 @@
       cursor: pointer;
       font-size: 1rem;
     }
-    #result {
+    .result {
       margin-top: 2rem;
       font-weight: bold;
     }
@@ -102,28 +102,27 @@
 </head>
 <body>
   <header>
-    <h1>FinanceEase</h1>
+    <h1>SmartCalcSuite</h1>
     <p>Plan smarter. Spend better. Save easier.</p>
   </header>
   <nav>
     <a href="#">Home</a>
     <a href="#calculators">All Calculators</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
   </nav>
   <div class="container" id="calculators">
     <h2>Explore Our Smart Calculators</h2>
     <div class="grid">
-      <div class="card"><a href="#loan">Loan Calculator</a></div>
-      <div class="card"><a href="#mortgage">Mortgage Calculator</a></div>
-      <div class="card"><a href="#savings">Savings Goal Calculator</a></div>
-      <div class="card"><a href="#retirement">Retirement Planner</a></div>
-      <div class="card"><a href="#interest">Compound Interest Calculator</a></div>
-      <div class="card"><a href="#emi">EMI Calculator</a></div>
-      <div class="card"><a href="#budget">Monthly Budget Planner</a></div>
+      <div class="card"><a href="#loan">Loan</a></div>
+      <div class="card"><a href="#mortgage">Mortgage</a></div>
+      <div class="card"><a href="#savings">Savings</a></div>
+      <div class="card"><a href="#retirement">Retirement</a></div>
+      <div class="card"><a href="#interest">Interest</a></div>
+      <div class="card"><a href="#emi">EMI</a></div>
+      <div class="card"><a href="#budget">Budget</a></div>
     </div>
   </div>
 
+  <!-- Calculator sections will be here -->
   <div class="container calc-box" id="loan">
     <h2>Loan Calculator</h2>
     <label>Loan Amount ($)</label>
@@ -132,62 +131,62 @@
     <input id="loanRate" type="number">
     <label>Loan Term (years)</label>
     <input id="loanTerm" type="number">
-    <button onclick="calcLoan()">Calculate Monthly Payment</button>
-    <div id="resultLoan"></div>
+    <button onclick="calcLoan()">Calculate</button>
+    <div class="result" id="resultLoan"></div>
   </div>
 
   <div class="container calc-box" id="mortgage">
     <h2>Mortgage Calculator</h2>
     <label>Home Price ($)</label>
-    <input id="mortgageAmount" type="number">
+    <input id="mortgagePrice" type="number">
     <label>Down Payment ($)</label>
     <input id="mortgageDown" type="number">
     <label>Interest Rate (% annual)</label>
     <input id="mortgageRate" type="number">
     <label>Loan Term (years)</label>
     <input id="mortgageTerm" type="number">
-    <button onclick="calcMortgage()">Calculate Mortgage</button>
-    <div id="resultMortgage"></div>
+    <button onclick="calcMortgage()">Calculate</button>
+    <div class="result" id="resultMortgage"></div>
   </div>
 
   <div class="container calc-box" id="savings">
-    <h2>Savings Goal Calculator</h2>
-    <label>Monthly Saving Amount ($)</label>
-    <input id="saveMonthly" type="number">
+    <h2>Savings Calculator</h2>
+    <label>Monthly Savings ($)</label>
+    <input id="savingsMonthly" type="number">
     <label>Interest Rate (% annual)</label>
-    <input id="saveRate" type="number">
-    <label>Years to Save</label>
-    <input id="saveYears" type="number">
-    <button onclick="calcSavings()">Calculate Future Value</button>
-    <div id="resultSavings"></div>
+    <input id="savingsRate" type="number">
+    <label>Number of Years</label>
+    <input id="savingsYears" type="number">
+    <button onclick="calcSavings()">Calculate</button>
+    <div class="result" id="resultSavings"></div>
   </div>
 
   <div class="container calc-box" id="retirement">
-    <h2>Retirement Planner</h2>
+    <h2>Retirement Calculator</h2>
     <label>Current Age</label>
-    <input id="retAge" type="number">
+    <input id="retireCurrentAge" type="number">
     <label>Retirement Age</label>
-    <input id="retTargetAge" type="number">
+    <input id="retireAge" type="number">
     <label>Monthly Contribution ($)</label>
-    <input id="retContribution" type="number">
-    <label>Annual Return Rate (%)</label>
-    <input id="retReturn" type="number">
-    <button onclick="calcRetirement()">Estimate Retirement Fund</button>
-    <div id="resultRetirement"></div>
+    <input id="retireMonthly" type="number">
+    <label>Expected Annual Return (%)</label>
+    <input id="retireReturn" type="number">
+    <button onclick="calcRetirement()">Calculate</button>
+    <div class="result" id="resultRetirement"></div>
   </div>
 
   <div class="container calc-box" id="interest">
     <h2>Compound Interest Calculator</h2>
-    <label>Principal ($)</label>
-    <input id="intPrincipal" type="number">
-    <label>Rate (% annual)</label>
-    <input id="intRate" type="number">
-    <label>Years</label>
-    <input id="intYears" type="number">
-    <label>Compound Frequency (times/year)</label>
-    <input id="intFreq" type="number">
-    <button onclick="calcInterest()">Calculate Compound Interest</button>
-    <div id="resultInterest"></div>
+    <label>Principal Amount ($)</label>
+    <input id="interestPrincipal" type="number">
+    <label>Annual Interest Rate (%)</label>
+    <input id="interestRate" type="number">
+    <label>Number of Years</label>
+    <input id="interestYears" type="number">
+    <label>Compounding Frequency (times/year)</label>
+    <input id="interestFrequency" type="number">
+    <button onclick="calcInterest()">Calculate</button>
+    <div class="result" id="resultInterest"></div>
   </div>
 
   <div class="container calc-box" id="emi">
@@ -196,90 +195,93 @@
     <input id="emiAmount" type="number">
     <label>Interest Rate (% annual)</label>
     <input id="emiRate" type="number">
-    <label>Loan Term (years)</label>
-    <input id="emiTerm" type="number">
-    <button onclick="calcEMI()">Calculate EMI</button>
-    <div id="resultEMI"></div>
+    <label>Loan Tenure (years)</label>
+    <input id="emiYears" type="number">
+    <button onclick="calcEMI()">Calculate</button>
+    <div class="result" id="resultEMI"></div>
   </div>
 
   <div class="container calc-box" id="budget">
-    <h2>Monthly Budget Planner</h2>
+    <h2>Budget Planner</h2>
     <label>Total Monthly Income ($)</label>
     <input id="budgetIncome" type="number">
-    <button onclick="calcBudget()">Generate Budget Breakdown</button>
-    <div id="resultBudget"></div>
+    <button onclick="calcBudget()">Calculate</button>
+    <div class="result" id="resultBudget"></div>
   </div>
 
   <footer>
-    <p>&copy; 2025 FinanceEase. All Rights Reserved.</p>
+    <p>&copy; 2025 SmartCalcSuite. All Rights Reserved.</p>
   </footer>
 
   <script>
+    function formatCurrency(value) {
+      return "$" + value.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
+
     function calcLoan() {
       const P = parseFloat(document.getElementById("loanAmount").value);
       const r = parseFloat(document.getElementById("loanRate").value) / 100 / 12;
       const n = parseFloat(document.getElementById("loanTerm").value) * 12;
+      if (!P || !r || !n) {
+        document.getElementById("resultLoan").textContent = "Please fill all fields.";
+        return;
+      }
       const monthly = (P * r) / (1 - Math.pow(1 + r, -n));
-      document.getElementById("resultLoan").textContent = `Monthly Payment: $${monthly.toFixed(2)}`;
+      document.getElementById("resultLoan").textContent = `Monthly Payment: ${formatCurrency(monthly)}`;
     }
+  function calcMortgage() {
+  const price = parseFloat(document.getElementById("mortgagePrice").value);
+  const down = parseFloat(document.getElementById("mortgageDown").value);
+  const r = parseFloat(document.getElementById("mortgageRate").value) / 100 / 12;
+  const n = parseFloat(document.getElementById("mortgageTerm").value) * 12;
+  const P = price - down;
+  const monthly = (P * r) / (1 - Math.pow(1 + r, -n));
+  document.getElementById("resultMortgage").textContent = `Monthly Mortgage Payment: ${formatCurrency(monthly)}`;
+}
 
-    function calcMortgage() {
-      const price = parseFloat(document.getElementById("mortgageAmount").value);
-      const down = parseFloat(document.getElementById("mortgageDown").value);
-      const loan = price - down;
-      const r = parseFloat(document.getElementById("mortgageRate").value) / 100 / 12;
-      const n = parseFloat(document.getElementById("mortgageTerm").value) * 12;
-      const monthly = (loan * r) / (1 - Math.pow(1 + r, -n));
-      document.getElementById("resultMortgage").textContent = `Monthly Mortgage: $${monthly.toFixed(2)}`;
-    }
+function calcSavings() {
+  const m = parseFloat(document.getElementById("savingsMonthly").value);
+  const r = parseFloat(document.getElementById("savingsRate").value) / 100 / 12;
+  const n = parseFloat(document.getElementById("savingsYears").value) * 12;
+  const FV = m * ((Math.pow(1 + r, n) - 1) / r);
+  document.getElementById("resultSavings").textContent = `Future Value: ${formatCurrency(FV)}`;
+}
 
-    function calcSavings() {
-      const m = parseFloat(document.getElementById("saveMonthly").value);
-      const r = parseFloat(document.getElementById("saveRate").value) / 100 / 12;
-      const n = parseFloat(document.getElementById("saveYears").value) * 12;
-      const FV = m * ((Math.pow(1 + r, n) - 1) / r);
-      document.getElementById("resultSavings").textContent = `Future Value: $${FV.toFixed(2)}`;
-    }
+function calcRetirement() {
+  const current = parseInt(document.getElementById("retireCurrentAge").value);
+  const retire = parseInt(document.getElementById("retireAge").value);
+  const m = parseFloat(document.getElementById("retireMonthly").value);
+  const r = parseFloat(document.getElementById("retireReturn").value) / 100 / 12;
+  const n = (retire - current) * 12;
+  const FV = m * ((Math.pow(1 + r, n) - 1) / r);
+  document.getElementById("resultRetirement").textContent = `Estimated Retirement Savings: ${formatCurrency(FV)}`;
+}
 
-    function calcRetirement() {
-      const current = parseInt(document.getElementById("retAge").value);
-      const target = parseInt(document.getElementById("retTargetAge").value);
-      const m = parseFloat(document.getElementById("retContribution").value);
-      const r = parseFloat(document.getElementById("retReturn").value) / 100 / 12;
-      const n = (target - current) * 12;
-      const FV = m * ((Math.pow(1 + r, n) - 1) / r);
-      document.getElementById("resultRetirement").textContent = `Estimated Retirement Fund: $${FV.toFixed(2)}`;
-    }
+function calcInterest() {
+  const P = parseFloat(document.getElementById("interestPrincipal").value);
+  const r = parseFloat(document.getElementById("interestRate").value) / 100;
+  const t = parseFloat(document.getElementById("interestYears").value);
+  const n = parseFloat(document.getElementById("interestFrequency").value);
+  const A = P * Math.pow(1 + r / n, n * t);
+  document.getElementById("resultInterest").textContent = `Future Value: ${formatCurrency(A)}`;
+}
 
-    function calcInterest() {
-      const P = parseFloat(document.getElementById("intPrincipal").value);
-      const r = parseFloat(document.getElementById("intRate").value) / 100;
-      const t = parseFloat(document.getElementById("intYears").value);
-      const n = parseInt(document.getElementById("intFreq").value);
-      const A = P * Math.pow(1 + r / n, n * t);
-      document.getElementById("resultInterest").textContent = `Future Value: $${A.toFixed(2)}`;
-    }
+function calcEMI() {
+  const P = parseFloat(document.getElementById("emiAmount").value);
+  const r = parseFloat(document.getElementById("emiRate").value) / 100 / 12;
+  const n = parseFloat(document.getElementById("emiYears").value) * 12;
+  const EMI = (P * r) / (1 - Math.pow(1 + r, -n));
+  document.getElementById("resultEMI").textContent = `Monthly EMI: ${formatCurrency(EMI)}`;
+}
 
-    function calcEMI() {
-      const P = parseFloat(document.getElementById("emiAmount").value);
-      const r = parseFloat(document.getElementById("emiRate").value) / 100 / 12;
-      const n = parseFloat(document.getElementById("emiTerm").value) * 12;
-      const EMI = (P * r) / (1 - Math.pow(1 + r, -n));
-      document.getElementById("resultEMI").textContent = `Monthly EMI: $${EMI.toFixed(2)}`;
-    }
+function calcBudget() {
+  const income = parseFloat(document.getElementById("budgetIncome").value);
+  const needs = income * 0.5;
+  const wants = income * 0.3;
+  const savings = income * 0.2;
+  document.getElementById("resultBudget").innerHTML = `Needs: ${formatCurrency(needs)}<br>Wants: ${formatCurrency(wants)}<br>Savings: ${formatCurrency(savings)}`;
+}
 
-    function calcBudget() {
-      const income = parseFloat(document.getElementById("budgetIncome").value);
-      const needs = income * 0.5;
-      const wants = income * 0.3;
-      const savings = income * 0.2;
-      document.getElementById("resultBudget").innerHTML = `
-        <p>Suggested 50/30/20 Budget:</p>
-        <p>Needs: $${needs.toFixed(2)}</p>
-        <p>Wants: $${wants.toFixed(2)}</p>
-        <p>Savings: $${savings.toFixed(2)}</p>
-      `;
-    }
-  </script>
+</script>
 </body>
 </html>
