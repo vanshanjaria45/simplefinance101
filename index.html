@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Essential personal finance knowledge for young adults starting their careers.">
-  <title>SmartStart Finance | Personal Finance for Young Adults</title>
+  <meta name="description" content="All-in-one online financial calculators: Loan, Mortgage, Savings, Retirement, EMI, Interest, Budget, and more.">
+  <title>CalcNest | Smarter Online Financial Calculators</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #f4f4f4;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f2f5;
       color: #333;
     }
     header {
-      background-color: #a51c30;
+      background-color: #1abc9c;
       color: white;
       padding: 2rem;
       text-align: center;
     }
     nav {
-      background-color: #333;
-      padding: 0.5rem;
+      background-color: #16a085;
+      padding: 0.75rem;
       text-align: center;
     }
     nav a {
@@ -30,20 +30,37 @@
       font-weight: bold;
     }
     .container {
-      max-width: 960px;
+      max-width: 1000px;
       margin: auto;
       padding: 2rem;
       background-color: white;
     }
     h1, h2 {
-      color: #a51c30;
+      color: #16a085;
     }
-    article {
-      line-height: 1.8;
-      font-size: 1.1rem;
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: #ecf0f1;
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .card:hover {
+      background-color: #d0ece7;
+    }
+    .card a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
     }
     footer {
-      background-color: #a51c30;
+      background-color: #1abc9c;
       color: white;
       text-align: center;
       padding: 1rem;
@@ -53,57 +70,62 @@
 </head>
 <body>
   <header>
-    <h1>SmartStart Finance</h1>
-    <p>Empowering Young Adults with Practical Financial Knowledge</p>
+    <h1>CalcNest</h1>
+    <p>Your Hub for All Things Financial – Free, Accurate, and Easy to Use</p>
   </header>
   <nav>
     <a href="#">Home</a>
+    <a href="#calculators">Calculators</a>
     <a href="#about">About</a>
-    <a href="#guide">Finance Guide</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="container">
-    <section id="guide">
-      <h2>Personal Finance Guide for 20-Somethings</h2>
-      <article>
-        <p>Welcome to SmartStart Finance — your foundation for building a confident financial future. If you're in your 20s and just starting your career, this guide is tailored for you. These are the key principles of personal finance every young adult should master early on:</p>
-
-        <h3>1. Budgeting is Non-Negotiable</h3>
-        <p>Budgeting helps you understand exactly where your money goes. Use the 50/30/20 rule as a starting point: 50% for needs, 30% for wants, 20% for savings and debt. Apps like YNAB, Mint, or even a simple spreadsheet can help you stay on track.</p>
-
-        <h3>2. Emergency Funds: Your First Safety Net</h3>
-        <p>Before investing or spending big, build an emergency fund. Aim for 3–6 months of living expenses in a high-interest savings account. This protects you from job loss, unexpected bills, or urgent travel.</p>
-
-        <h3>3. Credit: Build It Early, Use It Wisely</h3>
-        <p>Your credit score affects your ability to rent, get a car loan, or even a job. Get a credit card early and always pay in full. Never spend more than 30% of your credit limit.</p>
-
-        <h3>4. Debt: Understand and Control It</h3>
-        <p>Student loans, car loans, or credit card debt can snowball fast. Know your interest rates and prioritize high-interest debt. Make consistent payments. Avoid "buy now, pay later" traps unless it's interest-free and fully manageable.</p>
-
-        <h3>5. Start Saving for Retirement Now</h3>
-        <p>The earlier you invest, the more you benefit from compound interest. Use employer-sponsored plans like RRSP or 401(k), and consider opening a TFSA or Roth IRA. Even small amounts now can turn into significant assets later.</p>
-
-        <h3>6. Track Your Net Worth</h3>
-        <p>Once a month, list your assets (cash, savings, investments) and your liabilities (debt). This helps you stay grounded and motivated to grow your wealth over time.</p>
-
-        <h3>7. Know the Basics of Taxes</h3>
-        <p>Learn how income tax works. Know what deductions you’re eligible for (like tuition credits or moving expenses), and use simple software like TurboTax or Wealthsimple Tax to file. Understanding taxes saves you money.</p>
-
-        <h3>8. Live Below Your Means</h3>
-        <p>Don't inflate your lifestyle with every raise. Build the habit of saving more than you spend, and avoid the pressure of keeping up with friends’ spending habits.</p>
-
-        <h3>9. Protect Yourself: Insurance & Security</h3>
-        <p>Get basic health, tenant, and auto insurance. Protect yourself from identity theft with strong passwords and secure banking habits. Don’t skip this.</p>
-
-        <h3>10. Keep Learning</h3>
-        <p>Money habits compound over time. Read finance books, listen to podcasts (e.g., “The Dave Ramsey Show”, “Afford Anything”), and keep updating your knowledge. Financial literacy is a life skill, not a one-time lesson.</p>
-
-        <p>This is your foundation — come back regularly, explore each topic in depth, and remember: small smart choices today = massive freedom tomorrow.</p>
-      </article>
-    </section>
+  <div class="container" id="calculators">
+    <h2>Choose a Calculator</h2>
+    <div class="calculator-grid">
+      <div class="card"><a href="#loan">Loan Calculator</a></div>
+      <div class="card"><a href="#mortgage">Mortgage Calculator</a></div>
+      <div class="card"><a href="#savings">Savings Calculator</a></div>
+      <div class="card"><a href="#retirement">Retirement Planner</a></div>
+      <div class="card"><a href="#emi">EMI Calculator</a></div>
+      <div class="card"><a href="#interest">Interest Calculator</a></div>
+      <div class="card"><a href="#budget">Budget Planner</a></div>
+    </div>
   </div>
+
+  <div class="container" id="loan">
+    <h2>Loan Calculator</h2>
+    <label for="loanAmount">Loan Amount ($):</label>
+    <input type="number" id="loanAmount">
+    <label for="interestRate">Annual Interest Rate (%):</label>
+    <input type="number" id="interestRate">
+    <label for="loanTerm">Loan Term (Years):</label>
+    <input type="number" id="loanTerm">
+    <button onclick="calculateLoan()">Calculate Monthly Payment</button>
+    <div id="result"></div>
+  </div>
+
   <footer>
-    <p>&copy; 2025 SmartStart Finance. Empowering Financial Independence.</p>
+    <p>&copy; 2025 CalcNest. Smarter Money Starts Here.</p>
   </footer>
+
+  <script>
+    function calculateLoan() {
+      const amount = parseFloat(document.getElementById('loanAmount').value);
+      const annualRate = parseFloat(document.getElementById('interestRate').value);
+      const years = parseFloat(document.getElementById('loanTerm').value);
+
+      if (isNaN(amount) || isNaN(annualRate) || isNaN(years)) {
+        document.getElementById('result').textContent = "Please fill in all fields.";
+        return;
+      }
+
+      const monthlyRate = annualRate / 100 / 12;
+      const payments = years * 12;
+      const monthly = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -payments));
+
+      document.getElementById('result').textContent =
+        `Monthly Payment: $${monthly.toFixed(2)}`;
+    }
+  </script>
 </body>
 </html>
