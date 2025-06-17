@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="All-in-one online financial calculators: Loan, Mortgage, Savings, Retirement, EMI, Interest, Budget, and more.">
-  <title>CalcNest | Smarter Online Financial Calculators</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FinanceEase: The ultimate all-in-one financial calculator hub for budgeting, loans, savings, interest, and planning.">
+  <title>FinanceEase | All-in-One Online Financial Calculators</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f0f2f5;
+      background-color: #f8f9fa;
       color: #333;
     }
     header {
-      background-color: #1abc9c;
+      background-color: #003366;
       color: white;
       padding: 2rem;
       text-align: center;
     }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
     nav {
-      background-color: #16a085;
-      padding: 0.75rem;
+      background-color: #002244;
+      padding: 1rem;
       text-align: center;
     }
     nav a {
       color: white;
-      text-decoration: none;
       margin: 0 1rem;
+      text-decoration: none;
       font-weight: bold;
     }
     .container {
@@ -35,96 +39,246 @@
       padding: 2rem;
       background-color: white;
     }
-    h1, h2 {
-      color: #16a085;
+    h2 {
+      color: #003366;
+      margin-bottom: 1rem;
     }
-    .calculator-grid {
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    button {
+      margin-top: 1.5rem;
+      background-color: #003366;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    #result {
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
+      margin-top: 2rem;
     }
     .card {
-      padding: 1.5rem;
+      padding: 1rem;
+      background-color: #e9ecef;
       border-radius: 8px;
-      background-color: #ecf0f1;
       text-align: center;
-      transition: 0.3s;
-      cursor: pointer;
+      transition: background-color 0.3s;
     }
     .card:hover {
-      background-color: #d0ece7;
+      background-color: #dee2e6;
     }
     .card a {
       text-decoration: none;
-      color: #2c3e50;
       font-weight: bold;
+      color: #003366;
     }
     footer {
-      background-color: #1abc9c;
+      background-color: #003366;
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
+    }
+    .calc-box {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 2px solid #ccc;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>CalcNest</h1>
-    <p>Your Hub for All Things Financial – Free, Accurate, and Easy to Use</p>
+    <h1>FinanceEase</h1>
+    <p>Plan smarter. Spend better. Save easier.</p>
   </header>
   <nav>
     <a href="#">Home</a>
-    <a href="#calculators">Calculators</a>
+    <a href="#calculators">All Calculators</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
   <div class="container" id="calculators">
-    <h2>Choose a Calculator</h2>
-    <div class="calculator-grid">
+    <h2>Explore Our Smart Calculators</h2>
+    <div class="grid">
       <div class="card"><a href="#loan">Loan Calculator</a></div>
       <div class="card"><a href="#mortgage">Mortgage Calculator</a></div>
-      <div class="card"><a href="#savings">Savings Calculator</a></div>
+      <div class="card"><a href="#savings">Savings Goal Calculator</a></div>
       <div class="card"><a href="#retirement">Retirement Planner</a></div>
+      <div class="card"><a href="#interest">Compound Interest Calculator</a></div>
       <div class="card"><a href="#emi">EMI Calculator</a></div>
-      <div class="card"><a href="#interest">Interest Calculator</a></div>
-      <div class="card"><a href="#budget">Budget Planner</a></div>
+      <div class="card"><a href="#budget">Monthly Budget Planner</a></div>
     </div>
   </div>
 
-  <div class="container" id="loan">
+  <div class="container calc-box" id="loan">
     <h2>Loan Calculator</h2>
-    <label for="loanAmount">Loan Amount ($):</label>
-    <input type="number" id="loanAmount">
-    <label for="interestRate">Annual Interest Rate (%):</label>
-    <input type="number" id="interestRate">
-    <label for="loanTerm">Loan Term (Years):</label>
-    <input type="number" id="loanTerm">
-    <button onclick="calculateLoan()">Calculate Monthly Payment</button>
-    <div id="result"></div>
+    <label>Loan Amount ($)</label>
+    <input id="loanAmount" type="number">
+    <label>Interest Rate (% annual)</label>
+    <input id="loanRate" type="number">
+    <label>Loan Term (years)</label>
+    <input id="loanTerm" type="number">
+    <button onclick="calcLoan()">Calculate Monthly Payment</button>
+    <div id="resultLoan"></div>
+  </div>
+
+  <div class="container calc-box" id="mortgage">
+    <h2>Mortgage Calculator</h2>
+    <label>Home Price ($)</label>
+    <input id="mortgageAmount" type="number">
+    <label>Down Payment ($)</label>
+    <input id="mortgageDown" type="number">
+    <label>Interest Rate (% annual)</label>
+    <input id="mortgageRate" type="number">
+    <label>Loan Term (years)</label>
+    <input id="mortgageTerm" type="number">
+    <button onclick="calcMortgage()">Calculate Mortgage</button>
+    <div id="resultMortgage"></div>
+  </div>
+
+  <div class="container calc-box" id="savings">
+    <h2>Savings Goal Calculator</h2>
+    <label>Monthly Saving Amount ($)</label>
+    <input id="saveMonthly" type="number">
+    <label>Interest Rate (% annual)</label>
+    <input id="saveRate" type="number">
+    <label>Years to Save</label>
+    <input id="saveYears" type="number">
+    <button onclick="calcSavings()">Calculate Future Value</button>
+    <div id="resultSavings"></div>
+  </div>
+
+  <div class="container calc-box" id="retirement">
+    <h2>Retirement Planner</h2>
+    <label>Current Age</label>
+    <input id="retAge" type="number">
+    <label>Retirement Age</label>
+    <input id="retTargetAge" type="number">
+    <label>Monthly Contribution ($)</label>
+    <input id="retContribution" type="number">
+    <label>Annual Return Rate (%)</label>
+    <input id="retReturn" type="number">
+    <button onclick="calcRetirement()">Estimate Retirement Fund</button>
+    <div id="resultRetirement"></div>
+  </div>
+
+  <div class="container calc-box" id="interest">
+    <h2>Compound Interest Calculator</h2>
+    <label>Principal ($)</label>
+    <input id="intPrincipal" type="number">
+    <label>Rate (% annual)</label>
+    <input id="intRate" type="number">
+    <label>Years</label>
+    <input id="intYears" type="number">
+    <label>Compound Frequency (times/year)</label>
+    <input id="intFreq" type="number">
+    <button onclick="calcInterest()">Calculate Compound Interest</button>
+    <div id="resultInterest"></div>
+  </div>
+
+  <div class="container calc-box" id="emi">
+    <h2>EMI Calculator</h2>
+    <label>Loan Amount ($)</label>
+    <input id="emiAmount" type="number">
+    <label>Interest Rate (% annual)</label>
+    <input id="emiRate" type="number">
+    <label>Loan Term (years)</label>
+    <input id="emiTerm" type="number">
+    <button onclick="calcEMI()">Calculate EMI</button>
+    <div id="resultEMI"></div>
+  </div>
+
+  <div class="container calc-box" id="budget">
+    <h2>Monthly Budget Planner</h2>
+    <label>Total Monthly Income ($)</label>
+    <input id="budgetIncome" type="number">
+    <button onclick="calcBudget()">Generate Budget Breakdown</button>
+    <div id="resultBudget"></div>
   </div>
 
   <footer>
-    <p>&copy; 2025 CalcNest. Smarter Money Starts Here.</p>
+    <p>&copy; 2025 FinanceEase. All Rights Reserved.</p>
   </footer>
 
   <script>
-    function calculateLoan() {
-      const amount = parseFloat(document.getElementById('loanAmount').value);
-      const annualRate = parseFloat(document.getElementById('interestRate').value);
-      const years = parseFloat(document.getElementById('loanTerm').value);
+    function calcLoan() {
+      const P = parseFloat(document.getElementById("loanAmount").value);
+      const r = parseFloat(document.getElementById("loanRate").value) / 100 / 12;
+      const n = parseFloat(document.getElementById("loanTerm").value) * 12;
+      const monthly = (P * r) / (1 - Math.pow(1 + r, -n));
+      document.getElementById("resultLoan").textContent = `Monthly Payment: $${monthly.toFixed(2)}`;
+    }
 
-      if (isNaN(amount) || isNaN(annualRate) || isNaN(years)) {
-        document.getElementById('result').textContent = "Please fill in all fields.";
-        return;
-      }
+    function calcMortgage() {
+      const price = parseFloat(document.getElementById("mortgageAmount").value);
+      const down = parseFloat(document.getElementById("mortgageDown").value);
+      const loan = price - down;
+      const r = parseFloat(document.getElementById("mortgageRate").value) / 100 / 12;
+      const n = parseFloat(document.getElementById("mortgageTerm").value) * 12;
+      const monthly = (loan * r) / (1 - Math.pow(1 + r, -n));
+      document.getElementById("resultMortgage").textContent = `Monthly Mortgage: $${monthly.toFixed(2)}`;
+    }
 
-      const monthlyRate = annualRate / 100 / 12;
-      const payments = years * 12;
-      const monthly = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -payments));
+    function calcSavings() {
+      const m = parseFloat(document.getElementById("saveMonthly").value);
+      const r = parseFloat(document.getElementById("saveRate").value) / 100 / 12;
+      const n = parseFloat(document.getElementById("saveYears").value) * 12;
+      const FV = m * ((Math.pow(1 + r, n) - 1) / r);
+      document.getElementById("resultSavings").textContent = `Future Value: $${FV.toFixed(2)}`;
+    }
 
-      document.getElementById('result').textContent =
-        `Monthly Payment: $${monthly.toFixed(2)}`;
+    function calcRetirement() {
+      const current = parseInt(document.getElementById("retAge").value);
+      const target = parseInt(document.getElementById("retTargetAge").value);
+      const m = parseFloat(document.getElementById("retContribution").value);
+      const r = parseFloat(document.getElementById("retReturn").value) / 100 / 12;
+      const n = (target - current) * 12;
+      const FV = m * ((Math.pow(1 + r, n) - 1) / r);
+      document.getElementById("resultRetirement").textContent = `Estimated Retirement Fund: $${FV.toFixed(2)}`;
+    }
+
+    function calcInterest() {
+      const P = parseFloat(document.getElementById("intPrincipal").value);
+      const r = parseFloat(document.getElementById("intRate").value) / 100;
+      const t = parseFloat(document.getElementById("intYears").value);
+      const n = parseInt(document.getElementById("intFreq").value);
+      const A = P * Math.pow(1 + r / n, n * t);
+      document.getElementById("resultInterest").textContent = `Future Value: $${A.toFixed(2)}`;
+    }
+
+    function calcEMI() {
+      const P = parseFloat(document.getElementById("emiAmount").value);
+      const r = parseFloat(document.getElementById("emiRate").value) / 100 / 12;
+      const n = parseFloat(document.getElementById("emiTerm").value) * 12;
+      const EMI = (P * r) / (1 - Math.pow(1 + r, -n));
+      document.getElementById("resultEMI").textContent = `Monthly EMI: $${EMI.toFixed(2)}`;
+    }
+
+    function calcBudget() {
+      const income = parseFloat(document.getElementById("budgetIncome").value);
+      const needs = income * 0.5;
+      const wants = income * 0.3;
+      const savings = income * 0.2;
+      document.getElementById("resultBudget").innerHTML = `
+        <p>Suggested 50/30/20 Budget:</p>
+        <p>Needs: $${needs.toFixed(2)}</p>
+        <p>Wants: $${wants.toFixed(2)}</p>
+        <p>Savings: $${savings.toFixed(2)}</p>
+      `;
     }
   </script>
 </body>
